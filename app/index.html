@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      let req = "<%= req %>";
+
+      // Create a new DOMParser
+      const parser = new DOMParser();
+
+      // Use the parser to parse the string as XML
+      const dom = parser.parseFromString(
+        "<!doctype html><body>" + req,
+        "text/html"
+      );
+
+      window.sfContext = dom.body.textContent;
+
+      console.log("sfContext", sfContext);
+    </script>
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

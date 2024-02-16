@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/6fe3ffcb-361c-4556-89a8-f3b5eadb3cca/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/soon-sf-canvas-test",
+    "appService.deploySubpath": "."
+}
