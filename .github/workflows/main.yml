@@ -1,0 +1,31 @@
+name: sf-canvas-demo workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      - feature/**
+      - bugfix/**
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "^20.9.0"
+      - name: Install packages root
+        run: npm ci
+      - name: Install packages app folder
+        run: npm ci
+        working-directory: app
+      - name: app:build
+        run: npm run app:build
+      - name: Formatting & Lint check
+        run: npm run app:lint
