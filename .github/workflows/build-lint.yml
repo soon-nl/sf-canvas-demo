@@ -1,4 +1,4 @@
-name: sf-canvas-demo workflow
+name: sf-canvas-demo build and lint workflow
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
       - bugfix/**
 
 jobs:
-  lint-and-build:
+  build-and-lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
