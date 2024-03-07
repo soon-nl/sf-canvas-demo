@@ -1,0 +1,1 @@
+npm run app:build && npx lint-staged

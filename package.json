@@ -9,7 +9,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "refresh-react-app": "cross-env ./build_and_copy.sh"
+    "refresh-react-app": "cross-env ./build_and_copy.sh",
+    "prepare": "husky",
+    "app:lint": "npm run --prefix ./app lint",
+    "app:lint:fix": "npm run --prefix ./app lint:fix",
+    "app:build": "npm run --prefix ./app build"
   },
   "repository": {
     "type": "git",
@@ -33,6 +37,8 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2"
   }
 }

@@ -27,10 +27,11 @@ function App() {
 			);
 			const data: Record<string, unknown> = await dataResponse.json();
 			setResponse(data);
-
+			/* eslint-disable no-console */
 			console.log(data);
 		} catch (error) {
 			console.error('Error fetching data:', error);
+			/* eslint-enable no-console */
 			// Handle error state or display error message to the user
 		}
 	};
