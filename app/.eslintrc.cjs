@@ -11,6 +11,7 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react/recommended',
 		'plugin:prettier/recommended',
+		'plugin:sonarjs/recommended'
 	],
 	overrides: [
 		{
@@ -30,7 +31,7 @@ module.exports = {
 		project: ['./tsconfig.json'],
 		tsconfigRootDir: __dirname,
 	},
-	plugins: ['@typescript-eslint', 'react'],
+	plugins: ['@typescript-eslint', 'react', 'sonarjs'],
 	rules: {
 		'react/react-in-jsx-scope': 0,
 		// Configure prettier
