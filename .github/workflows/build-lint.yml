@@ -3,12 +3,10 @@ name: sf-canvas-demo build and lint workflow
 on:
   push:
     branches:
-      - main
-      - feature/**
-      - bugfix/**
+      - master
   pull_request:
     branches:
-      - main
+      - master
       - feature/**
       - bugfix/**
 
