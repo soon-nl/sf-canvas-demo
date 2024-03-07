@@ -12,7 +12,8 @@
     "refresh-react-app": "cross-env ./build_and_copy.sh",
     "prepare": "husky",
     "app:lint": "npm run --prefix ./app lint",
-    "app:lint:fix": "npm run --prefix ./app lint:fix"
+    "app:lint:fix": "npm run --prefix ./app lint:fix",
+    "app:build": "npm run --prefix ./app build"
   },
   "repository": {
     "type": "git",
