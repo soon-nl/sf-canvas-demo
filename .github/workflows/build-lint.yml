@@ -29,3 +29,4 @@ jobs:
         run: npm run app:build
       - name: Formatting & Lint check
         run: npm run app:lint
+        
