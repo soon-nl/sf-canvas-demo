@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "refresh-react-app": "cross-env ./build_and_copy.sh",
-    "prepare": "husky"
+    "prepare": "husky",
+    "app:lint": "npm run --prefix ./app lint"
   },
   "repository": {
     "type": "git",
