@@ -11,7 +11,7 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react/recommended',
 		'plugin:prettier/recommended',
-		'plugin:sonarjs/recommended'
+		'plugin:sonarjs/recommended',
 	],
 	overrides: [
 		{

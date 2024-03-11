@@ -12,6 +12,7 @@ npm run build
 if [ $? -eq 0 ]; then
     echo "Build successful. Copying dist folder..."
     # Copy the build folder to a different location
+    rm -r ../dist
     cp -r dist ../
     echo "dist folder copied"
 

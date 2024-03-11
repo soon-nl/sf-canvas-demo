@@ -1,24 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext, IAuthContext } from 'react-oauth2-code-pkce';
 import reactLogo from './assets/react.svg';
 import viteLogo from '../public/vite.svg';
 import './App.css';
 
 function App() {
-	const [sfContext, setSFContext] = useState<Record<string, unknown>>();
+	const { idToken, token, tokenData, idTokenData } =
+		useContext<IAuthContext>(AuthContext);
 
 	const [response, setResponse] = useState<Record<string, unknown>>();
-
-	useEffect(() => {
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		// @ts-ignore
-		setSFContext(window.sfContext);
-	}, []);
 
 	const consumeEndpoint = async () => {
 		try {
 			const requestOptions: RequestInit = {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: `Bearer e${idToken}`,
+				},
 			};
 
 			const dataResponse = await fetch(
@@ -46,7 +45,54 @@ function App() {
 					<img src={reactLogo} className="logo react" alt="React logo" />
 				</a>
 			</div>
-			<button type="button" onClick={consumeEndpoint}>
+
+			<div>
+				<div>
+					<p>Access Token:</p>
+					<textarea
+						name="response"
+						rows={10}
+						cols={60}
+						value={token}
+						readOnly
+					/>
+				</div>
+
+				<div>
+					<p>Id Token:</p>
+					<textarea
+						name="response"
+						rows={10}
+						cols={60}
+						value={idToken}
+						readOnly
+					/>
+				</div>
+
+				<div>
+					<p>Decoded Access Token:</p>
+					<textarea
+						name="response"
+						rows={10}
+						cols={60}
+						value={JSON.stringify(tokenData, null, 2)}
+						readOnly
+					/>
+				</div>
+
+				<div>
+					<p>Decoded Id Token:</p>
+					<textarea
+						name="response"
+						rows={10}
+						cols={60}
+						value={JSON.stringify(idTokenData, null, 2)}
+						readOnly
+					/>
+				</div>
+			</div>
+
+			<button type="button" onClick={consumeEndpoint} disabled={!idToken}>
 				RUN ME
 			</button>
 			{response && (
@@ -58,18 +104,6 @@ function App() {
 						rows={10}
 						cols={60}
 						value={JSON.stringify(response)}
-						readOnly
-					/>
-				</div>
-			)}
-			{sfContext && (
-				<div>
-					<p>SFContext:</p>
-					<textarea
-						name="response"
-						rows={10}
-						cols={60}
-						value={JSON.stringify(sfContext)}
 						readOnly
 					/>
 				</div>
