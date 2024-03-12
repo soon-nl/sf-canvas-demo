@@ -1,4 +1,14 @@
 {
-    "appService.defaultWebAppToDeploy": "undefined/subscriptions/6fe3ffcb-361c-4556-89a8-f3b5eadb3cca/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/soon-sf-canvas-test",
-    "appService.deploySubpath": "."
+	"appService.defaultWebAppToDeploy": "undefined/subscriptions/6fe3ffcb-361c-4556-89a8-f3b5eadb3cca/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/soon-sf-canvas-test",
+	"appService.deploySubpath": ".",
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"prettier.trailingComma": "es5",
+	"prettier.requireConfig": false,
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 2,
+	"prettier.printWidth": 80,
+	"editor.tabSize": 2,
+	"editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
 }
